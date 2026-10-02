@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs>
+<linearGradient id="ga44" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141414"/><stop offset="1" stop-color="#2e2e2e"/></linearGradient>
+<radialGradient id="sa44" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".25" stop-color="#e9e6df"/><stop offset="1" stop-color="#141414"/></radialGradient>
+<filter id="ba44" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="81"/></filter>
+<filter id="na44"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="url(#ga44)"/>
+<g filter="url(#ba44)"><circle cx="540" cy="326" r="469" fill="#c8f04a" opacity="0.73"/><circle cx="46" cy="120" r="496" fill="#8a8a8a" opacity="0.60"/><circle cx="136" cy="451" r="366" fill="#8a8a8a" opacity="0.61"/><circle cx="317" cy="76" r="255" fill="#c8f04a" opacity="0.72"/></g>
+<circle cx="638.9454964915969" cy="496.1757205604463" r="270" fill="url(#sa44)"/><ellipse cx="638.9454964915969" cy="802.1757205604463" rx="198" ry="31.500000000000004" fill="#000" opacity=".35" filter="url(#ba44)"/>
+<rect width="1200" height="900" filter="url(#na44)"/>
+</svg>

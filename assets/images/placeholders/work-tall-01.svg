@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+<defs>
+<linearGradient id="ga50" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a110d"/><stop offset="1" stop-color="#4a2416"/></linearGradient>
+<radialGradient id="sa50" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".25" stop-color="#ff7a45"/><stop offset="1" stop-color="#1a110d"/></radialGradient>
+<filter id="ba50" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="81"/></filter>
+<filter id="na50"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>
+</defs>
+<rect width="900" height="1200" fill="url(#ga50)"/>
+<g filter="url(#ba50)"><circle cx="756" cy="653" r="522" fill="#ff4f6d" opacity="0.69"/><circle cx="171" cy="882" r="386" fill="#ff4f6d" opacity="0.45"/><circle cx="770" cy="183" r="532" fill="#ffc46b" opacity="0.55"/><circle cx="34" cy="278" r="384" fill="#ff4f6d" opacity="0.70"/></g>
+<path d="M238.38138294191168 1200 V514.9966450228806 a189 189 0 0 1 378 0 V1200Z" fill="#ff7a45" opacity="0.92"/><path d="M278.88138294191174 1200 V580.2466450228806 a148.49999999999997 148.49999999999997 0 0 1 296.99999999999994 0 V1200Z" fill="#1a110d" opacity="1"/><path d="M319.3813829419117 1200 V645.4966450228806 a108 108 0 0 1 216 0 V1200Z" fill="#ff4f6d" opacity="0.92"/><path d="M359.8813829419117 1200 V710.7466450228806 a67.49999999999999 67.49999999999999 0 0 1 134.99999999999997 0 V1200Z" fill="#1a110d" opacity="1"/>
+<rect width="900" height="1200" filter="url(#na50)"/>
+</svg>

@@ -1,0 +1,15 @@
+GSAP (GreenSock Animation Platform) 3.15.0 - gsap.min.js, ScrollTrigger.min.js
+Copyright (c) Webflow, Inc. (formerly GreenSock). All rights reserved.
+
+GSAP is distributed under the GSAP "Standard No-Charge License".
+Full license text: https://gsap.com/standard-license
+
+Summary (not a substitute for the full license):
+- Free to use, including commercial use, on any website, web application
+  or digital interface ("Permitted Uses").
+- You may NOT use GSAP in a no-code visual animation-builder tool that
+  competes with Webflow's visual animation capabilities ("Prohibited Uses").
+- You may not remove or alter GSAP's copyright notices or branding.
+
+This template uses GSAP only to animate its own pages (a Permitted Use).
+GSAP is NOT licensed under MIT or GPL; it is a free, proprietary license.

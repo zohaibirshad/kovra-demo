@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+<linearGradient id="ga11" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1517"/><stop offset="1" stop-color="#173e42"/></linearGradient>
+<radialGradient id="sa11" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".25" stop-color="#5de0d0"/><stop offset="1" stop-color="#0c1517"/></radialGradient>
+<filter id="ba11" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="72"/></filter>
+<filter id="na11"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#ga11)"/>
+<g filter="url(#ba11)"><circle cx="327" cy="517" r="356" fill="#c8f04a" opacity="0.75"/><circle cx="90" cy="331" r="288" fill="#5de0d0" opacity="0.35"/><circle cx="496" cy="73" r="266" fill="#6aa2ff" opacity="0.66"/><circle cx="917" cy="349" r="439" fill="#6aa2ff" opacity="0.67"/></g>
+<g transform="translate(638.8419895986291 409.2368982179262)"><path d="M0 -216 L187.92 -108 L0 0 L-187.92 -108Z" fill="#5de0d0"/><path d="M-187.92 -108 L0 0 L0 216 L-187.92 108Z" fill="#c8f04a" opacity=".9"/><path d="M187.92 -108 L0 0 L0 216 L187.92 108Z" fill="#173e42"/></g>
+<rect width="1200" height="800" filter="url(#na11)"/>
+</svg>

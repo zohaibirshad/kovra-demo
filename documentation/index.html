@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kovra Documentation - Creative Agency &amp; Portfolio HTML Template</title>
+  <meta name="description" content="Documentation for the Kovra HTML template: installation, file structure, customization, credits and support.">
+  <link rel="stylesheet" href="assets/doc.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="layout">
+  <nav class="sidebar" aria-label="Documentation">
+    <a class="brand" href="#intro">Kovra<span>.</span></a>
+    <p>HTML Template Documentation<br>Version 1.0.0</p>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#install">Getting started</a></li>
+      <li><a href="#structure">File structure</a></li>
+      <li><a href="#pages">Pages</a></li>
+      <li><a href="#html">HTML layout</a></li>
+      <li><a href="#colors">Colors &amp; color modes</a></li>
+      <li><a href="#fonts">Fonts</a></li>
+      <li><a href="#scss">SCSS &amp; compiling</a></li>
+      <li><a href="#animations">Animations</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#images">Images</a></li>
+      <li><a href="#a11y">Accessibility</a></li>
+      <li><a href="#browsers">Browser support</a></li>
+      <li><a href="#credits">Credits &amp; licenses</a></li>
+      <li><a href="#changelog">Changelog</a></li>
+      <li><a href="#support">Support</a></li>
+    </ol>
+  </nav>
+
+  <main id="content">
+    <section id="intro" aria-labelledby="intro-h">
+      <span class="badge">v1.0.0</span>
+      <h1 id="intro-h">Kovra - Creative Agency &amp; Portfolio HTML Template</h1>
+      <p>Thank you for purchasing Kovra! Kovra is a dark, motion-rich HTML5 template for digital agencies, studios, freelancers and creative professionals. It is built with <strong>Bootstrap 5</strong>, <strong>SCSS</strong>, <strong>vanilla JavaScript</strong> (no jQuery), <strong>GSAP + ScrollTrigger</strong> and <strong>Lenis</strong> smooth scrolling, and ships with an optional light mode.</p>
+      <p>This guide explains how to set up, edit and customize the template. If something is unclear, please see <a href="#support">Support</a>.</p>
+      <ul>
+        <li>16 HTML pages including 3 home variants</li>
+        <li>Dark design with a one-click light mode (remembered per visitor)</li>
+        <li>Preloader, word-by-word text reveal, magnetic buttons, custom cursor, marquees, image hover reveal, clip-path image reveals, parallax, counters, pinned horizontal gallery</li>
+        <li>Fully responsive, keyboard accessible, respects <code>prefers-reduced-motion</code></li>
+        <li>W3C-valid HTML, organized SCSS, well-commented modular JavaScript</li>
+      </ul>
+    </section>
+
+    <section id="install" aria-labelledby="install-h">
+      <h2 id="install-h">Getting started</h2>
+      <h3>1. Unzip the package</h3>
+      <p>After downloading from ThemeForest, unzip the main file. You will find:</p>
+      <pre><code>kovra/
+├── template/        ← the website (upload the contents of this folder)
+├── documentation/   ← this guide
+└── README.txt</code></pre>
+      <h3>2. Preview locally</h3>
+      <p>Open <code>template/index.html</code> in a modern browser. Everything works straight from the file system. For the most accurate preview (and to test the contact form endpoint) we recommend a local server, for example the VS Code “Live Server” extension, or:</p>
+      <pre><code>cd template
+npx serve .          # or: python3 -m http.server 8000</code></pre>
+      <h3>3. Upload</h3>
+      <p>Upload the <strong>contents</strong> of the <code>template/</code> folder to your hosting (public_html, www, etc.) with FTP or your host's file manager. The <code>assets/scss/</code> folder and <code>package.json</code> are only needed for development and can be left out of the upload.</p>
+    </section>
+
+    <section id="structure" aria-labelledby="structure-h">
+      <h2 id="structure-h">File structure</h2>
+      <pre><code>template/
+├── index.html, home-freelancer.html, home-minimal.html, about.html, ... (16 pages)
+├── package.json              ← optional: SCSS build scripts
+└── assets/
+    ├── css/
+    │   ├── style.css         ← compiled theme CSS (linked by every page)
+    │   └── style.min.css     ← minified version
+    ├── scss/
+    │   ├── style.scss        ← main entry, imports every partial
+    │   ├── abstracts/        ← _variables.scss (brand settings), _mixins.scss
+    │   ├── base/             ← fonts, root custom properties, base, typography, utilities
+    │   ├── components/       ← buttons, preloader, cursor, marquee, forms, cards, misc
+    │   ├── layout/           ← header &amp; navigation, footer, page hero
+    │   └── pages/            ← home variants, inner pages
+    ├── js/
+    │   ├── theme-init.js     ← applies the saved color mode before paint
+    │   └── main.js           ← all theme behaviour, split into 20 named modules
+    ├── fonts/                ← Syne &amp; Manrope (self-hosted woff2 + OFL licenses)
+    ├── images/
+    │   ├── icons/favicon.svg
+    │   └── placeholders/     ← SVG placeholder images (replace with your own)
+    └── vendor/               ← Bootstrap, GSAP, Lenis (+ license files)</code></pre>
+    </section>
+
+    <section id="pages" aria-labelledby="pages-h">
+      <h2 id="pages-h">Pages</h2>
+      <table>
+        <caption class="meta">All pages share the same header, mobile menu and footer.</caption>
+        <thead><tr><th scope="col">File</th><th scope="col">Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>index.html</code></td><td>Home 1 - Agency studio (hero, showreel, services hover list, featured work, process, testimonials, awards, journal)</td></tr>
+          <tr><td><code>home-freelancer.html</code></td><td>Home 2 - Personal / freelancer portfolio (portrait hero, skills, services, works list, experience timeline)</td></tr>
+          <tr><td><code>home-minimal.html</code></td><td>Home 3 - Minimal showcase (oversized type, pinned horizontal gallery, work index)</td></tr>
+          <tr><td><code>about.html</code></td><td>About the studio</td></tr>
+          <tr><td><code>services.html</code> / <code>service-details.html</code></td><td>Services overview and single service with sidebar</td></tr>
+          <tr><td><code>portfolio-grid.html</code> / <code>portfolio-masonry.html</code></td><td>Filterable portfolio in grid and masonry layouts</td></tr>
+          <tr><td><code>project-details.html</code></td><td>Case study / project details</td></tr>
+          <tr><td><code>team.html</code></td><td>Team members + careers</td></tr>
+          <tr><td><code>pricing.html</code></td><td>Pricing plans with toggle, comparison table and FAQ</td></tr>
+          <tr><td><code>blog.html</code> / <code>blog-details.html</code></td><td>Blog list with sidebar, single article with comments</td></tr>
+          <tr><td><code>contact.html</code></td><td>Contact form with front-end validation, info cards, map placeholder</td></tr>
+          <tr><td><code>404.html</code></td><td>Error page</td></tr>
+          <tr><td><code>coming-soon.html</code></td><td>Coming soon page with countdown and newsletter</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="html" aria-labelledby="html-h">
+      <h2 id="html-h">HTML layout</h2>
+      <p>Every page follows the same skeleton, with clear comments in the source:</p>
+      <pre><code>&lt;a class="skip-link" href="#main"&gt;Skip to content&lt;/a&gt;
+&lt;div class="preloader"&gt;…&lt;/div&gt;          &lt;!-- optional --&gt;
+&lt;div class="cursor"&gt;…&lt;/div&gt;             &lt;!-- optional --&gt;
+&lt;header class="site-header"&gt;…&lt;/header&gt;
+&lt;div class="offcanvas mobile-menu"&gt;…&lt;/div&gt;
+&lt;main id="main"&gt; … sections … &lt;/main&gt;
+&lt;footer class="site-footer"&gt;…&lt;/footer&gt;
+&lt;!-- vendor scripts, then assets/js/main.js --&gt;</code></pre>
+      <h3>Navigation</h3>
+      <p>The desktop menu is inside <code>&lt;nav class="main-nav"&gt;</code>; the mobile menu is the Bootstrap offcanvas <code>#mobile-menu</code>. When you add or rename a page, update both menus (search the page source for <code>main-nav</code> and <code>mobile-nav</code>). Mark the current page link with <code>aria-current="page"</code>.</p>
+      <h3>Logo</h3>
+      <p>The logo is a text wordmark (<code>&lt;a class="logo"&gt;Kovra&lt;span&gt;.&lt;/span&gt;&lt;/a&gt;</code>). To use an image instead, replace the text with <code>&lt;img src="assets/images/logo.svg" alt="Your brand" width="120" height="32"&gt;</code>.</p>
+      <h3>Removing the preloader or cursor</h3>
+      <p>Delete the <code>.preloader</code> or <code>.cursor</code> element from the page. The JavaScript detects their absence automatically.</p>
+    </section>
+
+    <section id="colors" aria-labelledby="colors-h">
+      <h2 id="colors-h">Colors &amp; color modes</h2>
+      <p>Colors are defined once in <code>assets/scss/abstracts/_variables.scss</code> and output as CSS custom properties (<code>--kv-*</code>) for the dark and light themes.</p>
+      <h3>Option A - without a build step (CSS custom properties)</h3>
+      <p>Add a small override after <code>style.css</code>, e.g. in a new <code>assets/css/custom.css</code>:</p>
+      <pre><code>:root, [data-theme="dark"] {
+  --kv-accent: #ff5c8a;       /* brand accent */
+  --kv-accent-text: #ff5c8a;  /* accent used for text on dark backgrounds */
+  --kv-bg: #0a0a12;
+}
+[data-theme="light"] {
+  --kv-accent-text: #b0003a;  /* darker accent so text stays readable (WCAG AA) */
+}</code></pre>
+      <h3>Option B - with SCSS</h3>
+      <p>Edit <code>$kv-accent</code>, <code>$kv-accent-light</code>, the <code>$kv-dark</code> and <code>$kv-light</code> maps, then compile (see <a href="#scss">SCSS</a>).</p>
+      <table>
+        <thead><tr><th scope="col">Custom property</th><th scope="col">Used for</th></tr></thead>
+        <tbody>
+          <tr><td><code>--kv-bg</code>, <code>--kv-bg-soft</code>, <code>--kv-surface</code></td><td>Page background, alternate sections, cards</td></tr>
+          <tr><td><code>--kv-text</code>, <code>--kv-muted</code></td><td>Main and secondary text</td></tr>
+          <tr><td><code>--kv-border</code></td><td>Hairlines and borders</td></tr>
+          <tr><td><code>--kv-accent</code>, <code>--kv-accent-ink</code></td><td>Accent backgrounds and the text placed on them</td></tr>
+          <tr><td><code>--kv-accent-text</code></td><td>Accent-colored text and links (darker in light mode)</td></tr>
+          <tr><td><code>--kv-invert-bg</code>, <code>--kv-invert-text</code></td><td>Inverted blocks (preloader, featured pricing card)</td></tr>
+        </tbody>
+      </table>
+      <h3>Light / dark mode</h3>
+      <ul>
+        <li>Dark is the default: <code>&lt;html data-theme="dark"&gt;</code>. To make light the default, change it to <code>data-theme="light"</code> (and <code>data-bs-theme="light"</code>) on every page.</li>
+        <li>Any button with <code>data-theme-toggle</code> switches the mode. The choice is saved in <code>localStorage</code> (key <code>kovra-theme</code>) and applied before first paint by <code>theme-init.js</code>.</li>
+        <li>To remove the toggle, delete the <code>.theme-toggle</code> button.</li>
+      </ul>
+    </section>
+
+    <section id="fonts" aria-labelledby="fonts-h">
+      <h2 id="fonts-h">Fonts</h2>
+      <p>Kovra uses two Google Fonts, both under the SIL Open Font License 1.1 and <strong>self-hosted</strong> in <code>assets/fonts/</code> (no requests to Google, better privacy and performance):</p>
+      <ul>
+        <li><strong>Syne</strong> (display headings), variable weight 400-800</li>
+        <li><strong>Manrope</strong> (body text), variable weight 200-800</li>
+      </ul>
+      <p>To change fonts: add your <code>@font-face</code> rules in <code>assets/scss/base/_fonts.scss</code> (or load a Google Fonts stylesheet in the <code>&lt;head&gt;</code>) and update the variables, or override at runtime:</p>
+      <pre><code>:root {
+  --kv-font-display: "Space Grotesk", sans-serif;
+  --kv-font-body: "Inter", sans-serif;
+}</code></pre>
+      <p><strong>Optional (live server only):</strong> preload the main font files for faster first render by adding these tags to each page's <code>&lt;head&gt;</code>. Font preloads are not included by default because browsers block them when a page is opened directly from the file system (<code>file://</code>).</p>
+      <pre><code>&lt;link rel="preload" href="assets/fonts/syne/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin&gt;
+&lt;link rel="preload" href="assets/fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin&gt;</code></pre>
+    </section>
+
+    <section id="scss" aria-labelledby="scss-h">
+      <h2 id="scss-h">SCSS &amp; compiling</h2>
+      <p>The compiled <code>assets/css/style.css</code> is included, so SCSS is optional. To work with SCSS you need <a href="https://nodejs.org/">Node.js</a> 18+:</p>
+      <pre><code>cd template
+npm install          # installs Dart Sass (dev dependency)
+npm run watch        # recompiles style.css on every save
+npm run build        # builds style.css and style.min.css</code></pre>
+      <p>Any other Sass compiler (Prepros, Koala, VS Code “Live Sass Compiler”) also works - compile <code>assets/scss/style.scss</code> to <code>assets/css/style.css</code>. The SCSS uses the modern <code>@use</code> module system (Dart Sass 1.33+).</p>
+      <p>Bootstrap is included as the precompiled <code>bootstrap.min.css</code>; theme styles map Bootstrap's own CSS variables onto Kovra's palette in <code>base/_root.scss</code>.</p>
+    </section>
+
+    <section id="animations" aria-labelledby="animations-h">
+      <h2 id="animations-h">Animations</h2>
+      <p>All motion is controlled with HTML data attributes, so you rarely need to touch JavaScript. Behaviour lives in <code>assets/js/main.js</code>, which is split into numbered modules (see the table of contents at the top of the file).</p>
+      <table>
+        <thead><tr><th scope="col">Attribute</th><th scope="col">Effect</th></tr></thead>
+        <tbody>
+          <tr><td><code>data-split</code></td><td>Heading words slide up when scrolled into view. Use <code>data-split="hero"</code> to play right after the preloader.</td></tr>
+          <tr><td><code>data-anim="fade-up"</code> / <code>"fade"</code></td><td>Fade (and rise) into view. Siblings are staggered automatically.</td></tr>
+          <tr><td><code>data-reveal="image"</code></td><td>Clip-path wipe reveal of an image wrapper + subtle zoom.</td></tr>
+          <tr><td><code>data-speed="0.1"</code></td><td>Parallax on an <code>&lt;img&gt;</code> inside an overflow-hidden <code>.media</code> wrapper.</td></tr>
+          <tr><td><code>data-count="240"</code></td><td>Counts up from 0 when visible.</td></tr>
+          <tr><td><code>data-highlight</code></td><td>Paragraph words light up as you scroll.</td></tr>
+          <tr><td><code>data-magnetic</code> (optional value e.g. <code>"0.5"</code>)</td><td>Element is pulled toward the cursor.</td></tr>
+          <tr><td><code>data-cursor-text="View"</code></td><td>The custom cursor grows and shows the label.</td></tr>
+          <tr><td><code>data-reveal-img="path.svg"</code></td><td>On list links: a floating image follows the pointer.</td></tr>
+          <tr><td><code>data-horizontal</code></td><td>Section with <code>.h-scroll__track</code> scrolls sideways while pinned (desktop).</td></tr>
+          <tr><td><code>.marquee</code> + <code>--marquee-speed</code></td><td>Infinite CSS marquee; speeds up with scroll velocity. Add <code>.marquee--reverse</code> to flip direction.</td></tr>
+        </tbody>
+      </table>
+      <h3>Tuning</h3>
+      <ul>
+        <li><strong>Smooth scroll:</strong> change <code>lerp</code> in the <code>SmoothScroll</code> module (lower = smoother). To disable smooth scrolling, remove the <code>lenis.min.js</code> script tag.</li>
+        <li><strong>Preloader:</strong> durations live in the <code>Preloader</code> module. The full intro plays once per browser session; later page views use a quick fade.</li>
+        <li><strong>Reduced motion:</strong> when the visitor's OS asks for reduced motion, smooth scroll, the cursor, preloader animation and scroll effects are switched off and all content is shown immediately.</li>
+        <li><strong>No JavaScript:</strong> content stays fully visible; animation styles only apply when <code>html.js</code> is present.</li>
+      </ul>
+    </section>
+
+    <section id="components" aria-labelledby="components-h">
+      <h2 id="components-h">Components</h2>
+      <ul>
+        <li><strong>Buttons:</strong> <code>.btn-kv</code>, <code>.btn-kv-outline</code>, <code>.btn-kv-sm</code>, <code>.btn-circle</code>, <code>.btn-icon</code>, <code>.link-arrow</code></li>
+        <li><strong>Cards:</strong> <code>.project-card</code>, <code>.service-card</code>, <code>.team-card</code>, <code>.blog-card</code>, <code>.testimonial</code>, <code>.pricing-card</code>, <code>.stat</code>, <code>.process-step</code></li>
+        <li><strong>Lists:</strong> <code>.hover-list</code>, <code>.award-list</code>, <code>.timeline</code>, <code>.work-index</code></li>
+        <li><strong>Portfolio filter:</strong> buttons with <code>data-filter="web"</code> inside <code>[data-filter-bar]</code>; items need <code>.filter-item</code> and <code>data-category="web"</code>.</li>
+        <li><strong>Slider:</strong> <code>[data-slider="id"]</code> with a <code>.slider__track</code>; buttons <code>data-slider-prev="id"</code> / <code>data-slider-next="id"</code>. Arrow keys work when the track is focused.</li>
+        <li><strong>Pricing toggle:</strong> prices use <code>data-price-monthly</code> and <code>data-price-yearly</code>.</li>
+        <li><strong>Countdown:</strong> <code>data-date="2026-12-31T09:00:00"</code> for a fixed launch date, or <code>data-days="45"</code> for a rolling demo.</li>
+        <li><strong>FAQ:</strong> Bootstrap accordion restyled with <code>.accordion-kv</code>.</li>
+        <li><strong>Showreel modal:</strong> paste your YouTube/Vimeo <code>&lt;iframe&gt;</code> inside the <code>.ratio</code> element of <code>#showreel-modal</code> in <code>index.html</code>.</li>
+        <li><strong>Map:</strong> the contact page has a decorative map placeholder. Replace <code>.map-placeholder</code>'s SVG with an embedded map <code>&lt;iframe&gt;</code> from your map provider.</li>
+      </ul>
+    </section>
+
+    <section id="forms" aria-labelledby="forms-h">
+      <h2 id="forms-h">Forms</h2>
+      <p>Every form with <code>data-validate novalidate</code> gets accessible front-end validation (required, email, minimum length, pattern, checkboxes, selects). Error messages are written into the matching <code>[data-error-for="field-id"]</code> element and announced to screen readers.</p>
+      <div class="note"><strong>Important:</strong> an HTML template cannot send email by itself. Out of the box the forms run in demo mode and show a success message. To receive submissions, point the form to a form backend or your own server script.</div>
+      <p>Add a <code>data-endpoint</code> attribute; the form data is sent with <code>fetch()</code> as <code>multipart/form-data</code>, and any 2xx response shows the success message:</p>
+      <pre><code>&lt;form class="form-kv row g-4" id="contact-form" data-validate novalidate
+      data-endpoint="https://your-form-service.example/your-form-id"
+      data-success="Thanks! We'll reply within one business day."&gt;</code></pre>
+      <p>Hosted form services (Formspree, Getform, Basin, etc.) or a PHP/Node script on your own server all work. Always validate on the server too.</p>
+    </section>
+
+    <section id="images" aria-labelledby="images-h">
+      <h2 id="images-h">Images</h2>
+      <p>The download contains <strong>SVG placeholder images only</strong> (<code>assets/images/placeholders/</code>), generated for this template. Each one is labelled with its recommended size. Replace them with your own images, keep the same aspect ratio, and update the <code>alt</code> text.</p>
+      <table>
+        <thead><tr><th scope="col">Placeholder</th><th scope="col">Recommended size</th></tr></thead>
+        <tbody>
+          <tr><td><code>hero-*</code></td><td>1920 × 1080</td></tr>
+          <tr><td><code>work-*</code> / <code>work-tall-*</code></td><td>1200 × 900 / 900 × 1200</td></tr>
+          <tr><td><code>wide-*</code></td><td>1600 × 800</td></tr>
+          <tr><td><code>team-*</code> / <code>portrait-*</code> / <code>about-*</code></td><td>600 × 750 / 900 × 1100 / 1000 × 1200</td></tr>
+          <tr><td><code>blog-*</code> / <code>service-*</code> / <code>avatar-*</code></td><td>1200 × 800 / 800 × 1000 / 160 × 160</td></tr>
+        </tbody>
+      </table>
+      <p>Photos shown in the live preview come from royalty-free sources (see <a href="#credits">Credits</a>) and are <strong>not included</strong> in the download.</p>
+    </section>
+
+    <section id="a11y" aria-labelledby="a11y-h">
+      <h2 id="a11y-h">Accessibility</h2>
+      <ul>
+        <li>Semantic landmarks (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>), one <code>h1</code> per page, labelled sections and a skip link.</li>
+        <li>All interactive elements are reachable by keyboard and have a visible focus ring. Dropdown menus open with Enter/Space and close with Escape.</li>
+        <li>Body text meets WCAG AA contrast in both color modes; light mode uses a darker accent for text.</li>
+        <li>Decorative duplicates (marquee copies, cursor, preloader) are hidden from assistive technology.</li>
+        <li><code>prefers-reduced-motion</code> is fully respected.</li>
+      </ul>
+    </section>
+
+    <section id="browsers" aria-labelledby="browsers-h">
+      <h2 id="browsers-h">Browser support</h2>
+      <p>Latest versions of Chrome, Edge, Firefox, Safari (macOS &amp; iOS) and Samsung Internet. Internet Explorer is not supported.</p>
+    </section>
+
+    <section id="credits" aria-labelledby="credits-h">
+      <h2 id="credits-h">Credits &amp; licenses</h2>
+      <p>All third-party files are included locally with their license files.</p>
+      <table>
+        <thead><tr><th scope="col">Asset</th><th scope="col">Version</th><th scope="col">License</th><th scope="col">Location</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://getbootstrap.com/">Bootstrap</a></td><td>5.3.8</td><td>MIT</td><td><code>assets/vendor/bootstrap/</code></td></tr>
+          <tr><td><a href="https://gsap.com/">GSAP</a> + ScrollTrigger</td><td>3.15.0</td><td><a href="https://gsap.com/standard-license">GSAP Standard “No Charge” License</a> (free for commercial use)</td><td><code>assets/vendor/gsap/</code></td></tr>
+          <tr><td><a href="https://github.com/darkroomengineering/lenis">Lenis</a></td><td>1.3.26</td><td>MIT</td><td><code>assets/vendor/lenis/</code></td></tr>
+          <tr><td><a href="https://fonts.google.com/specimen/Syne">Syne</a> font (Bonjour Monde)</td><td>variable</td><td>SIL OFL 1.1</td><td><code>assets/fonts/syne/</code></td></tr>
+          <tr><td><a href="https://fonts.google.com/specimen/Manrope">Manrope</a> font (Mikhail Sharanda)</td><td>variable</td><td>SIL OFL 1.1</td><td><code>assets/fonts/manrope/</code></td></tr>
+          <tr><td>Icons</td><td>-</td><td>Original inline SVGs drawn for Kovra (included in the item license)</td><td>inline in HTML</td></tr>
+          <tr><td>Placeholder images</td><td>-</td><td>Original SVGs generated for Kovra (included in the item license)</td><td><code>assets/images/placeholders/</code></td></tr>
+        </tbody>
+      </table>
+      <h3>Preview images</h3>
+      <p>Images used only in the live demo are from royalty-free photo libraries and are not part of the download:</p>
+      <ul>
+        <li>Unsplash - <a href="https://unsplash.com/license">unsplash.com/license</a></li>
+        <li>Pexels - <a href="https://www.pexels.com/license/">pexels.com/license</a></li>
+      </ul>
+      <p class="meta">All company names, people and testimonials in the demo content are fictional.</p>
+    </section>
+
+    <section id="changelog" aria-labelledby="changelog-h">
+      <h2 id="changelog-h">Changelog</h2>
+      <h3>Version 1.0.0 - initial release</h3>
+      <ul><li>Initial release with 16 pages, dark/light modes and full documentation.</li></ul>
+    </section>
+
+    <section id="support" aria-labelledby="support-h">
+      <h2 id="support-h">Support</h2>
+      <p>If you have a question that is not answered here, please contact us through the <strong>Support</strong> tab on the item page or via the contact form on our ThemeForest author profile. We usually reply within 1-2 business days (Monday to Friday).</p>
+      <p>Support covers answering questions about the template, help with bugs and reported issues, and help with included third-party assets. It does not cover customization work or installation of third-party plugins. See the <a href="https://themeforest.net/page/item_support_policy">Envato item support policy</a>.</p>
+      <p>If you enjoy Kovra, a rating on ThemeForest helps a lot. Thank you!</p>
+    </section>
+  </main>
+</div>
+</body>
+</html>

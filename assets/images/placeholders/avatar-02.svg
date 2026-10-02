@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+<defs>
+<linearGradient id="ga4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141414"/><stop offset="1" stop-color="#2e2e2e"/></linearGradient>
+<radialGradient id="sa4" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".25" stop-color="#e9e6df"/><stop offset="1" stop-color="#141414"/></radialGradient>
+<filter id="ba4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="na4"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>
+</defs>
+<rect width="160" height="160" fill="url(#ga4)"/>
+<g filter="url(#ba4)"><circle cx="159" cy="35" r="75" fill="#e9e6df" opacity="0.53"/><circle cx="95" cy="22" r="92" fill="#8a8a8a" opacity="0.71"/><circle cx="142" cy="145" r="83" fill="#e9e6df" opacity="0.35"/><circle cx="40" cy="12" r="40" fill="#c8f04a" opacity="0.44"/></g>
+<ellipse cx="80" cy="59.2" rx="38.4" ry="35.2" fill="#141414" opacity=".9"/>
+      <ellipse cx="80" cy="168" rx="76.8" ry="64" fill="url(#sa4)"/>
+      <rect x="68.8" y="80" width="22.400000000000002" height="25.6" rx="8" fill="url(#sa4)"/>
+      <ellipse cx="80" cy="67.2" rx="30.4" ry="30.4" fill="url(#sa4)"/>
+<rect width="160" height="160" filter="url(#na4)"/>
+</svg>
